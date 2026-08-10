@@ -1,0 +1,1 @@
+local p=game.Players.LocalPlayer local m=p:GetMouse() local w=game.Workspace function f()local l={}for _,v in pairs(w:GetDescendants())do if v:IsA("BasePart")and v.Name and string.find(v.Name:lower(),"leaf")then table.insert(l,v)end end return l end while true do local l=f()if #l>0 then for _,v in pairs(l)do m.Button1Down:Fire()wait(.1)m.Button1Up:Fire()end end wait(1)end
